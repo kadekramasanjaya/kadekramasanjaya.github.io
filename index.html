@@ -11,6 +11,9 @@
     <!-- Bootstrap Icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
 
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <!-- My Css -->
     <link rel="stylesheet" href="style.css" />
 
@@ -48,7 +51,7 @@
     <section class="jumbotron text-center">
       <img src="img/rama.png" alt="Rama Sanjaya" width="300" class="rounded-circle img-thumbnail" />
       <h1 class="display-4">Rama Sanjaya</h1>
-      <p class="lead">Mahasiswa | Musisi | Content Creator</p>
+      <p class="lead"></p>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#ffffff"
@@ -61,7 +64,7 @@
 
     <!-- About -->
     <section id="about"></section>
-    <div class="container">
+    <div class="container" data-aos="zoom-in" data-aos-duration="1500">
       <div class="row text-center mb-3">
         <div class="col">
           <h2>About Me</h2>
@@ -100,7 +103,7 @@
         </div>
         <div class="row">
           <div class="col-md-4 mb-3">
-            <div class="card">
+            <div class="card" data-aos="flip-left" data-aos-duration="1500">
               <img src="img/Bola Kasti.jpg" class="card-img-top" alt="Bola Kasti 3D" />
               <div class="card-body">
                 <p class="card-text">
@@ -110,7 +113,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-3">
-            <div class="card">
+            <div class="card" data-aos="flip-left" data-aos-duration="1500">
               <img src="img/Matahari.jpg" class="card-img-top" alt="Matahari 3D" />
               <div class="card-body">
                 <p class="card-text">
@@ -120,7 +123,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-3">
-            <div class="card">
+            <div class="card" data-aos="flip-left" data-aos-duration="1500">
               <img src="img/FACEBOOK.png" class="card-img-top" alt="3D Icon Facebook" />
               <div class="card-body">
                 <p class="card-text">
@@ -130,7 +133,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-3">
-            <div class="card">
+            <div class="card" data-aos="flip-left" data-aos-duration="1500">
               <img src="img/0005.png" class="card-img-top" alt="Satisfying 3D" />
               <div class="card-body">
                 <p class="card-text">
@@ -140,7 +143,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-3">
-            <div class="card">
+            <div class="card" data-aos="flip-left" data-aos-duration="1500">
               <img src="img/0066.png" class="card-img-top" alt="Satisfying 3D Pendulum" />
               <div class="card-body">
                 <p class="card-text">
@@ -150,7 +153,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-3">
-            <div class="card">
+            <div class="card" data-aos="flip-left" data-aos-duration="1500">
               <img src="img/0141.png" class="card-img-top" alt="Satisfying 3D Ball" />
               <div class="card-body">
                 <p class="card-text">
@@ -170,6 +173,43 @@
       </svg>
     </section>
     <!-- Akhir Project -->
+
+    <!-- Galery -->
+    <section id="gallery">
+      <div class="container">
+        <div class="row">
+          <div class="row text-center mb-4">
+            <div class="col">
+              <h2>Galery</h2>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-md-3">
+              <a href="">
+                <img src="img/galery/0005.png" alt="Gambar 1" class="img-fluid gallery-img" />
+              </a>
+            </div>
+            <div class="col-md-3">
+              <a href="">
+                <img src="img/galery/0115.png" alt="Gambar 1" class="img-fluid gallery-img" />
+              </a>
+            </div>
+            <div class="col-md-3">
+              <a href="">
+                <img src="img/galery/0162.png" alt="Gambar 1" class="img-fluid gallery-img" />
+              </a>
+            </div>
+            <div class="col-md-3">
+              <a href="">
+                <img src="img/galery/0239.png" alt="Gambar 1" class="img-fluid gallery-img" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Akhir Galery -->
 
     <!-- Contact -->
     <section id="contact">
@@ -225,6 +265,27 @@
     </footer>
     <!-- Akhir Footer -->
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      const galleryImage = document.querySelectorAll(".gallery-img");
+
+      galleryImage.forEach((img, i) => {
+        img.dataset.aos = "fade-down";
+        img.dataset.aosDelay = i * 100;
+        img.dataset.aosDuration = 1000;
+      });
+
+      AOS.init({});
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/TextPlugin.min.js"></script>
+    <script>
+      gsap.registerPlugin(TextPlugin);
+      gsap.to(".lead", { duration: 2, delay: 1.5, text: "Mahasiswa | Musisi | Content Creator" });
+      gsap.from(".jumbotron img", { duration: 1, rotateY: 360, opacity: 0 });
+      gsap.from(".navbar", { duration: 1.5, y: "-100%", opacity: 0, ease: "bounce" });
+      gsap.from(".display-4", { duration: 1, x: -50, opacity: 0, delay: 0.5, ease: "back" });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
     <script>
