@@ -248,6 +248,26 @@
           </div>
         </div>
       </div>
+
+      <section id="dimensi">
+        <div class="container">
+          <div class="row text-center mb-3">
+            <div class="col">
+              <h2>3D Object</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-lg-4 mb-3">
+              <div class="dimensi-box">
+                <h4 class="dimensi-name">Gambar 1</h4>
+                <img src="img/rama.png" alt="animasi" class="dimensi-img" />
+                <a href="#" class="btn btn-light dimensi-detail-button">Show Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#02c6c6"
@@ -313,6 +333,14 @@
             console.log("Success!", response);
           })
           .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
+
+    <script type="text/javascript" src="js/vanilla-tilt.min.js"></script>
+    <script type="text/javascript">
+      VanillaTilt.init(document.querySelector(".dimensi-box"), {
+        max: 25,
+        speed: 400,
       });
     </script>
   </body>

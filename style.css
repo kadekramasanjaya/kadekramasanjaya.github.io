@@ -15,7 +15,97 @@ section {
   width: 100%;
 }
 
-#gallery .row > *
- {
+#gallery .row > * {
   padding: 0;
+}
+
+/* My 3D Sectoin */
+.dimensi-box {
+  position: relative;
+  background-color: #02c6c6;
+  border-radius: 10px;
+  height: 500px;
+  transform-style: preserve-3d;
+}
+
+.dimensi-box::before {
+  content: "3D";
+  position: absolute;
+  color: #fff;
+  font-size: 6em;
+  font-weight: bold;
+  font-style: italic;
+  top: 30px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.dimensi-box:hover::before {
+  opacity: 0.2;
+}
+
+.dimensi-box::after {
+  content: "Objek";
+  position: absolute;
+  color: #fff;
+  font-size: 4.3em;
+  font-weight: bold;
+  font-style: italic;
+  top: 350px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.dimensi-box:hover::after {
+  opacity: 0.2;
+}
+
+.dimensi-name {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  font-size: 2em;
+  opacity: 0;
+  transform: translate3d(0, 0, 50px);
+  transition: 0.5s;
+}
+
+.dimensi-box:hover .dimensi-name {
+  top: 20px;
+  opacity: 1;
+}
+
+.dimensi-detail-button {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.dimensi-box:hover .dimensi-detail-button {
+  opacity: 1;
+  bottom: 20px;
+}
+
+.dimensi-img {
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  transform: translate3d(-50%, 52%, 100px);
+  max-width: 350%;
+  transition: 0.5s;
+  z-index: 10;
+}
+
+.dimensi-box:hover .dimensi-img {
+  opacity: 1;
+  transform: translate3d(-50%, -30%, 100px) r scale(0.9);
 }
